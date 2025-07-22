@@ -1,0 +1,176 @@
+// Prueba de comparaciones y operadores lógicos
+
+hora := 14;
+diaSemana := "lunes";
+edad := 20;
+nombre := "Juan";
+
+// 1 Rango de horas laborales
+if (hora >= 9 && hora <= 18) {
+    print("Horario laboral");
+} else {
+    print("Fuera de horario laboral");
+}
+
+print("hola");
+
+// 2 Detectar fin de semana
+if (diaSemana == "domingo" || diaSemana == "sábado") {
+    print("Fin de semana");
+} else {
+    print("Día laboral");
+}
+
+// 3 Combinación y anidado de booleanos con cadenas
+if (edad >= 18 && (nombre != "Ana" || nombre != "Luis")) {
+    print("Adulto distinto de Ana y Luis");
+} else {
+    print("No aplica");
+}
+
+// 4 Igualdad y desigualdad numérica
+if (edad == 20) {
+    print("Edad es 20");
+}
+if (edad != 18) {
+    print("Edad no es 18");
+}
+
+
+// Prueba de bucles for y while
+
+// 1 for con declaración explícita de tipo
+for (int a = 0; a < 3; ++a) {
+    print(a);
+}
+
+// 2 for con inferencia de tipo
+for (i := 0; i < 5; ++i) {
+    print(i);
+}
+
+// 3 while con decremento
+n := 4;
+while (n > 0) {
+    print(n);
+    --n;
+}
+
+
+// Declaración de variables con tipos explícitos
+int a = 5;
+float b = 3.2;
+string saludo = "Hola";
+
+// Inferencia de tipos
+x := 10;
+y := x + a;
+
+// Condicional simple
+if (x > 5) {
+    print("x es mayor que 5");
+} else {
+    print("x es menor o igual a 5");
+}
+
+// Ciclo while con incremento
+int i = 0;
+while (i < 3) {
+    print(i);
+    ++i;
+}
+
+// Ciclo for con declaración, condición y post
+for (int j = 0; j < 2; ++j) {
+    print("Valor de j:");
+    print(j);
+}
+
+// Uso de arrays enteros
+int nums = [100, 200, 300];
+print(nums[1]);  // Imprime 200
+print(nums);
+
+// Inferencia de array
+letras := ["a", "b", "c"];
+print(letras[0]);  // Imprime "a"
+
+// Operaciones entre int y float
+print(a + b);      // Imprime 8.2
+
+// Operaciones lógicas
+print(x > 5 && y > 0);  // Imprime 1 (true)
+print(0 || 0);          // Imprime 0 (false)
+
+
+// Función explícita con tipo de retorno
+int suma(a, b) {
+    int result = a + b;
+    return result;
+}
+
+print("SUMA");
+print(suma(3, 4));
+
+// Función inferida (el compilador deduce tipos de parámetros y retorno)
+fun resta(a, b) {
+    return a - b;
+}
+
+print("RESTA");
+print(resta(5, 6));
+
+// Imprime los números del 1 al n con un bucle for
+fun imprimirFor(n){
+    // init      cond        post
+    for(i := 1; i <= n; ++i){
+        print(i);
+    }
+}
+
+// Ejecución
+imprimirFor(10);
+
+numeros := [1,2,3,4,5,6];
+fun print_array(){
+    // Crear array local en lugar de usar parámetro
+    localNumeros := [1,2,3,4,5,6];
+    for(i := 1; i<6;++i){
+        print(localNumeros[i]);
+    }
+}
+
+// Llamar a la función
+print_array();
+
+
+
+// probar si la declaración de matriz funciona
+//matriz := [[1,2,3]];
+
+
+fun demo(n) {
+    v := [1,2,3];
+    w := [4,5,6];
+    print(v + w);           // [5,7,9]
+    print(v * w);           // [4,10,18]
+    print(v * n);           // n escalar
+}
+
+demo(3);
+
+// Concatenación de strings
+string saludo2 = "Hola";
+string nombre2 = "Mundo";
+string mensaje = saludo2 + " " + nombre2;
+print(mensaje);  // Imprime: Hola Mundo
+
+// Acceso por índice a strings
+string palabra = "compilador";
+print(palabra[0]);   // Imprime: c
+print(palabra[4]);   // Imprime: l
+
+// También funciona en bucles
+for (int i = 0; i < 10; ++i) {
+    print(palabra[i]);
+}

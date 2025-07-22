@@ -1,0 +1,146 @@
+/*
+Compilar con:
+clang++ -g -O3 -std=c++17 compiler_lite.cpp $(llvm-config --cxxflags --ldflags --system-libs --libs all) -o my_compiler
+./my_compiler
+./my_program
+*/
+
+// Prueba simple de condicionales y bucles
+// Prueba de scope y arrays
+x := 10;
+y := 5;
+    
+// Condicional con variables locales
+if (x > y) {
+    localVar := 100;
+    string mensaje = "Solo visible dentro del if";
+    print("x es mayor que y");
+    print(localVar);
+    print(mensaje);
+} else {
+    otherVar := 200;
+    print("x no es mayor que y");
+}
+
+// Estas líneas deberían causar errores si el scope funciona
+//print(localVar);    // Error: variable no declarada
+//print(mensaje);     // Error: variable no declarada
+//print(otherVar);    // Error: variable no declarada
+
+// Bucle for con variable local
+for (i := 0; i < 3; ++i) {
+    loopVar := i * 2;
+    print(i);
+    print(loopVar);
+}
+
+// Esta línea debería causar error si el scope funciona
+// print(loopVar);     // Error: variable no declarada
+
+// Arrays simples
+nums := [1, 2, 3, 4, 5];
+names := ["Alice", "Bob", "Charlie"];
+floats := [1.1, 2.2, 3.3];
+
+
+
+print("Fin del programa");
+
+
+// Bucle for simple
+for (i := 0; i < 3; ++i) {
+    print(i);
+}
+
+// Bucle while simple  
+n := 3;
+while (n > 0) {
+    print(n);
+    --n;
+}
+
+// Operaciones lógicas
+if (x > 5 && y < 10) {
+    print("Condición compuesta verdadera");
+}
+
+print("Fin del programa");
+
+// Operaciones con decimales
+pi := 3.14;                 // Inferencia: float
+radius := 5.0;              // Inferencia: float
+area := pi * radius * radius; // Multiplicación de floats
+print(area);                // Debería imprimir: 78.539993
+
+/* Declaraciones explícitas de tipo */
+int number = 42;            // Entero explícito
+float temperature = 36.6;   // Float explícito
+string greeting = "Hello";  // String explícito
+
+// === OPERACIONES ARITMÉTICAS ===
+sum := number + 8;          // 42 + 8 = 50
+diff := number - 2;         // 42 - 2 = 40
+product := number * 2;      // 42 * 2 = 84
+quotient := number / 6;     // 42 / 6 = 7
+
+print(sum);                 // 50
+print(diff);                // 40
+print(product);             // 84
+print(quotient);            // 7
+
+// === PRUEBAS CON STRINGS ===
+name := "World";            // Inferencia: string
+message := greeting + " " + name + "!"; // Concatenación múltiple
+print(message);             // "Hello World!"
+
+// Más concatenaciones
+first := "Programming";
+second := "is";
+third := "fun";
+sentence := first + " " + second + " " + third + "!";
+print(sentence);            // "Programming is fun!"
+
+/*
+   Operaciones mixtas:
+   int + float = float
+*/
+mixed_result := number + pi;     // int + float
+print(mixed_result);             // 45.140000
+
+greeting = "Hi";            // Cambiar string
+new_msg := greeting + " there!";
+print(new_msg);             // "Hi there!"
+
+// === OPERACIONES CON FLOATS ===
+temp_change := temperature + 1.4;
+print(temp_change);         // 38.000000
+// Función explícita con tipo de retorno
+int suma(a, b) {
+    int result = a + b;
+    return result;
+}
+
+print("SUMA");
+print(suma(3, 4));
+
+// Función inferida (el compilador deduce tipos de parámetros y retorno)
+fun resta(a, b) {
+    return a - b;
+}
+
+print("RESTA");
+print(resta(5, 6));
+
+// Prueba final de acceso a strings como caracteres
+string palabra = "compilador";
+
+print("Caracteres como caracteres:");
+print(palabra[0]);   // Debería imprimir: c
+print(palabra[4]);   // Debería imprimir: i
+print(palabra[5]);   // Debería imprimir: l
+
+print("Bucle por caracteres:");
+// También funciona en bucles
+for (int i = 0; i < 10; ++i) {
+    print(palabra[i]);
+}

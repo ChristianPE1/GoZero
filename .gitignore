@@ -1,0 +1,28 @@
+# Compilador y ejecutables
+gozero
+my_program
+output.o
+
+# Objetos y temporales
+obj/
+*.o
+*.obj
+
+# Build de CMake
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Archivos de prueba generados
+*.txt
+*.log
+
+# Archivos de sistema
+.DS_Store
+*.swp
+*.swo
+
+# Archivos de backup
+*~
