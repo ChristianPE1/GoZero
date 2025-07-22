@@ -1,5 +1,6 @@
 # Compilador y ejecutables
 gozero
+gozero_debug
 my_program
 output.o
 
